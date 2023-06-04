@@ -1,0 +1,8 @@
+dsanalyzer_parsed
+.ipynb_checkpoints
+output.txt
+*__pycache__*
+dsanalyzer_parsed
+fig_update
+.vscode
+*log*

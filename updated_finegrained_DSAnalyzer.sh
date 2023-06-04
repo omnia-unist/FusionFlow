@@ -1,0 +1,93 @@
+#!/bin/bash
+
+SHELL=`basename "$0"`
+
+if [ $# != 0 ]; then
+    echo "$SHELL: USAGE: $SHELL"
+    exit 1
+fi
+
+CUR_DIR="./"
+SCRIPT_DIR="$CUR_DIR/scripts"
+
+# Start with cleanup the all logging executing processes
+$SCRIPT_DIR/cleanup.sh
+
+DATADIR="/data"
+DATAFOLDER="size10"
+DATASET=$DATADIR/$DATAFOLDER
+
+MODEL="resnet18"
+SCRIPT="wrapper.sh"
+MODE="default"
+RUN="$SCRIPT_DIR/$SCRIPT MODE"
+
+BATCH=512
+WORKERS=4
+THREADS=0
+
+##########
+# Single #
+##########
+
+TYPE="SINGLE"; EPOCH=5
+# TYPE="SINGLE"; EPOCH=255
+DATAFOLDER="size10"
+DATASET=$DATADIR/$DATAFOLDER
+DEFAULT_OPTION="$DATASET $MODEL $EPOCH $BATCH $WORKER $THREADS $AUG"
+
+BATCH64_MODELS=(
+)
+BATCH128_MODELS=(
+)
+BATCH256_MODELS=(
+)
+# BATCH=512
+# for _MODEL in ${BATCH128_MODELS[@]}; do
+#     $SCRIPT_DIR/$SCRIPT $TYPE loadNtrainPWPMPin $DATASET ${_MODEL} $EPOCH $BATCH 2 $THREADS norandom
+#     sleep 3m
+# done
+# BATCH=64
+# for _MODEL in ${BATCH64_MODELS[@]}; do
+#     $SCRIPT_DIR/$SCRIPT $TYPE loadNtrainPWPMPin $DATASET ${_MODEL} $EPOCH $BATCH 2 $THREADS norandom
+#     sleep 3m
+# done
+
+
+$RUN $TYPE loadNtrainPWPMPin $DEFAULT_OPTION
+
+# $SCRIPT_DIR/$SCRIPT $TYPE loadNtrainPWPMPin $DATASET resnet50 $EPOCH $BATCH 2 $THREADS norandom
+# $SCRIPT_DIR/$SCRIPT $TYPE trainNoAMP $DATASET $MODEL $EPOCH $BATCH 2 $THREADS norandom
+# sleep 1m
+# $SCRIPT_DIR/$SCRIPT $TYPE loadNtrainPWPMPinNoAMP $DATASET $MODEL $EPOCH $BATCH 2 $THREADS norandom
+# sleep 1m
+# $SCRIPT_DIR/$SCRIPT $TYPE prepNloadNtrainPMPWPinOverwriteSampler $DATASET $MODEL $EPOCH $BATCH $WORKERS $THREADS norandom
+# sleep 3m
+# $SCRIPT_DIR/$SCRIPT $TYPE fsNprepNloadNtrain $DATASET $MODEL $EPOCH $BATCH $WORKERS $THREADS norandom
+# sleep 3m
+# $SCRIPT_DIR/$SCRIPT $TYPE fetchNfsNprepNloadNtrain $DATADIR/size512 $MODEL $EPOCH $BATCH $WORKERS $THREADS norandom
+# EPOCH=3
+# sleep 5m
+# $SCRIPT_DIR/$SCRIPT $TYPE fetchNfsNprepNloadNtrain $DATADIR/size512 $MODEL $EPOCH $BATCH $WORKERS $THREADS norandom
+
+#######
+# DDP #
+#######
+TYPE="DDP"; EPOCH=5
+BATCH=$(($BATCH*4))
+WORKERS=$(($WORKERS*4))
+THREADS=0
+
+DATAFOLDER="size80iter"
+DATASET=$DATADIR/$DATAFOLDER
+# $SCRIPT_DIR/$SCRIPT $TYPE prepNloadNtrainPMPWPinOverwriteSampler $DATASET $MODEL $EPOCH $BATCH $WORKERS $THREADS norandom
+
+DATAFOLDER="size10"
+DATASET=$DATADIR/$DATAFOLDER
+# sleep 5m
+# $SCRIPT_DIR/$SCRIPT $TYPE train $DATASET $MODEL $EPOCH $BATCH 4 $THREADS norandom
+# sleep 5m
+# $SCRIPT_DIR/$SCRIPT $TYPE trainNoAMP $DATASET $MODEL $EPOCH $BATCH 2 $THREADS norandom
+# sleep 5m
+# $SCRIPT_DIR/$SCRIPT $TYPE loadNtrainPWPMPin $DATASET $MODEL $EPOCH $BATCH 4 $THREADS norandom
+

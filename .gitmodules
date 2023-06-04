@@ -1,0 +1,3 @@
+[submodule "log"]
+	path = log
+	url = ssh://git@omnia-git.unist.ac.kr:4500/omnia_projects/dnn-dataloading-optimization/codes/log.git

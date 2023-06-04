@@ -1,0 +1,16 @@
+{
+    "trainTypeSet":[
+        "SINGLE",
+        "DDP",
+        "DDP4GPU",
+        "SINGLEFULLTRACE",
+        "DDP4GPUFULLTRACE",
+        "DDP2GPUTwoSocket",
+        "DDP2GPU",
+        "DDP2GPUTwoSocket",
+        "DDP2GPUNoDiskSocket",
+        "DDPMANUAL",
+        "DDPFULLTRACE",
+        "DDPFULLTRACE2GPU"
+    ]
+}

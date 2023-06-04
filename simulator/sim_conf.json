@@ -1,0 +1,12 @@
+{
+    "FILE":"fsNprepNloadNtrain_openimage_randaugment_resnet50_epoch2_b2048_worker12_thread0",
+    "IOFILE":"fsNprepNloadNtrainIO_openimage_randaugment_resnet50_epoch2_b2048_worker12_thread0",
+    "FETCH_ALIGN": [false,"avg","min"],
+    "START_ALIGN": [false,"avg","min"],
+    "WORKER_NUM": 3,
+    "TRAINING_TIME": 0.8929,
+    "PADDING_TIME": 0.0003,
+    "PREFETCH_FACTOR": 2,
+    "FETCH_DELAY": 0.2,
+    "PREFETCH_DELAY": 0.2
+}
