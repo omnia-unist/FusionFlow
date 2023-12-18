@@ -9,61 +9,20 @@
 ## Requirement
 ### Allinone
 ```console
-CUDA_VERSION=1X.X
-//Check out https://docs.nvidia.com/deeplearning/dali/user-guide/docs/installation.html
-DALI_CUDA_VERSION=1XX
-conda install jupyter
-sudo apt install libnuma-dev
-pip install numa posix_ipc psutil matplotlib jupyterlab imgaug tensorflow-cpu==2.7.0 tensorflow_addons efficientnet_pytorch vit-pytorch sklearn git+https://github.com/wbaek/theconf@de32022f8c0651a043dc812d17194cdfd62066e8
-conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=${CUDA_VERSION} -c pytorch
-pip install --extra-index-url https://developer.download.nvidia.com/compute/redist --upgrade nvidia-dali-cuda${DALI_CUDA_VERSION}
-conda install -c conda-forge cupy cudatoolkit=${CUDA_VERSION}
+pip install --extra-index-url https://developer.download.nvidia.com/compute/redist --upgrade nvidia-dali-cuda110==1.24.0
+pip install torch==1.8.2 torchvision==0.9.2 torchaudio==0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu111
+pip install vit-pytorch==0.26.7
+pip install git+https://github.com/wbaek/theconf.git
 ```
 
 
-### Torch
-```console
-# CUDA 10.2
-conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
-
-# CUDA 11.1
-conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
-
-# CPU Only
-conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cpuonly -c pytorch
-```
-
-### Tensorflow for tf.data
-```console
-pip install tensorflow-cpu==2.7.0 tensorflow_addons
-pip install imgaug
-```
-
-### DALI
-```console
-pip install --extra-index-url https://developer.download.nvidia.com/compute/redist --upgrade nvidia-dali-cuda1xx
-conda install -c conda-forge cupy cudatoolkit=1x.x
-```
-
-
-## Before Running
-1. Prevent File Open Error
-```
-ulimit -n unlimited
-```
 
 ## Run Experiment
-1. ./finegrained_DSAnalyzer.sh
+1. ./train.sh
    - Execute Main Experiment
 
 ```console
-$ ./finegrained_DSAnalyzer.sh
+$ ./train.sh
 ```
 
 
-
-## Debug and Detailed Performance Checker
-1. ./fulltrace_main.sh
-```console
-$ ./fulltrace_main.sh
-```

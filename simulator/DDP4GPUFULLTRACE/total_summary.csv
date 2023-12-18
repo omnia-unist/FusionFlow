@@ -1,7 +1,0 @@
-,Align,Log type,Dataset size(GB),Model,Augmentation,Worker,Worker batch size,Epoch,Batch size,Avg iteration time (sec),Avg throughput (images/sec),Avg training stall time (sec),Avg delay time (sec),Avg preprocessing start diff (sec),Avg preprocessing diff (sec)
-0,FETCH_ALIGN_min_START_ALIGN_True,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,2.9353±2.6639,174.4269,2.025±2.6639,0.0±0.0,0.0±0.0,0.0±0.0
-1,FETCH_ALIGN_False_START_ALIGN_False,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,3.2491±3.3139,157.5814,2.3388±3.3139,1.8467±3.0887,5.2873±3.7964,5.8966±4.2559
-2,FETCH_ALIGN_avg_START_ALIGN_False,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,3.0908±2.8683,165.6507,2.1805±2.8683,0.0021±0.0028,0.0027±0.0029,0.0027±0.0029
-3,FETCH_ALIGN_False_START_ALIGN_True,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,3.1007±3.4114,165.1219,2.1904±3.4114,0.5726±2.4622,0.0±0.0,1.2635±2.9151
-4,FETCH_ALIGN_min_START_ALIGN_False,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,2.9353±2.6639,174.4269,2.025±2.6639,0.0024±0.0029,0.0044±0.0025,0.0044±0.0025
-5,FETCH_ALIGN_avg_START_ALIGN_True,fsNprepNloadNtrain,openimage,resnet50,randaugment,12,0,5,2048,3.0908±2.8683,165.6507,2.1805±2.8683,0.0±0.0,0.0±0.0,0.0±0.0
