@@ -18,7 +18,8 @@ pip install git+https://github.com/wbaek/theconf.git
 ```
 
 
-## FusionFlow Torch Installation [#https://github.com/omnia-unist/FusionFlow_PyTorch]
+## FusionFlow Torch Installation 
+[https://github.com/omnia-unist/FusionFlow_PyTorch]
 
 ```sh
 git clone --recursive https://github.com/pytorch/pytorch
@@ -37,7 +38,7 @@ python setup.py develop
 ```
 
 ## FusionFlow DALI Installation
-
+[https://github.com/omnia-unist/FusionFlow_DALI]
 ```sh
 
 cd wheelhouse
